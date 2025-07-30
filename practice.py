@@ -261,3 +261,7 @@ logger.info("App started")
 logger.warning("Warning: Check config")
 logger.error("Error occurred")
 logger.critical("Critical error! System down")
+
+
+#All done for now
+print("All done!!!")
