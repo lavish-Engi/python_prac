@@ -265,3 +265,5 @@ logger.critical("Critical error! System down")
 
 #All done for now
 print("All done!!!")
+
+print("testing last")
