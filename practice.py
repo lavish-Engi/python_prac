@@ -217,3 +217,47 @@ for row in rows:
 # Close
 cursor.close()
 conn.close()
+
+
+# Logging
+# Logging is the process of recording messages that describe events or actions that happen when your code runs.
+
+# Instead of using print() statements (which are not recommended for real applications), you use the logging module.
+# basic logging example
+import logging
+
+logging.basicConfig(level=logging.INFO)
+logging.info("Program started")
+logging.warning("Low disk space")
+logging.error("Something went wrong")
+
+
+import logging
+
+# Step 1: Create a logger object
+logger = logging.getLogger("my_app")
+logger.setLevel(logging.DEBUG)  # Minimum level to capture
+
+# Step 2: Create handlers
+console_handler = logging.StreamHandler()                 # Stream → console
+file_handler = logging.FileHandler("app.log")             # File → app.log
+
+# Step 3: Create formatter
+formatter = logging.Formatter(
+    '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
+
+# Step 4: Set formatter to handlers
+console_handler.setFormatter(formatter)
+file_handler.setFormatter(formatter)
+
+# Step 5: Add handlers to logger
+logger.addHandler(console_handler)
+logger.addHandler(file_handler)
+
+# Step 6: Log messages
+logger.debug("Debugging app...")
+logger.info("App started")
+logger.warning("Warning: Check config")
+logger.error("Error occurred")
+logger.critical("Critical error! System down")
